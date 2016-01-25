@@ -1,4 +1,4 @@
-package lad;
+package a1;
 
 /** Atomic formula. */
 public class Atom extends Formula {

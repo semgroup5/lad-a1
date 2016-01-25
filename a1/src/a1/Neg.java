@@ -1,6 +1,6 @@
-package lad;
+package a1;
 
-/** The negation of a lad.Formula. */
+/** The negation of a a1.Formula. */
 public class Neg extends Formula {
   
   /** The sub formula, never null. */

@@ -1,4 +1,4 @@
-package lad;
+package a1;
 
 /** Abstract syntax of formulas of propositional logic. */
 public abstract class Formula {
