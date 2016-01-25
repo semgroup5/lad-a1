@@ -1,3 +1,4 @@
+package lad;
 
 public class ParserTest {
 

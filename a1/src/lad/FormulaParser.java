@@ -1,3 +1,5 @@
+package lad;
+
 import java.util.TreeMap;
 
 /** Classification of tokens for parsing formulas. */
@@ -74,7 +76,7 @@ class Token {
 
 /** Transform an input string into a sequence of tokens. 
  * 
- *  Create new Scanner(s) from input string s and 
+ *  Create new lad.Scanner(s) from input string s and
  *  then iterate .next() to get all the tokens in sequence.
  *  Use .peek() to look ahead at next token. 
  *  Use .next() also to remove tokens you peeked at.  
@@ -241,7 +243,7 @@ class AtomDict {
   /** Create an atomic propositional formula from its name.
    * 
    * @param s Name of the atom.
-   * @return Atom with correct unique identifier.
+   * @return lad.Atom with correct unique identifier.
    */
   public Atom atom(String s) {
     return new Atom(atomId(s), s);
@@ -288,7 +290,7 @@ public class FormulaParser {
   
   /** Main method.  Parses the whole input into a single formula. 
    * 
-   * @return Formula (never null).
+   * @return lad.Formula (never null).
    */
   public Formula parse() {
     final Formula p = parseFormula();
@@ -300,7 +302,7 @@ public class FormulaParser {
   
   /** Parse a formula.
    * 
-   * @return Formula (never null).
+   * @return lad.Formula (never null).
    */
   private Formula parseFormula() {
     final Formula p = parseFactor();
@@ -308,7 +310,7 @@ public class FormulaParser {
   }
 
   /** Parse a factor of a formula, i.e., an atom, a negated factor, or a parenthesized formula. 
-   * @return Formula (never null).
+   * @return lad.Formula (never null).
    */
   private Formula parseFactor() {
     final Token t = scanner.peek();
@@ -332,7 +334,7 @@ public class FormulaParser {
   /** Check if next token is a connective, if yes, parse the second factor.
    *  If no, just return the formula p we have so far.
    *  
-   *  @param p Formula we have parsed so far.
+   *  @param p lad.Formula we have parsed so far.
    *  @return p or completion of p into a binary connective.
    */
   private Formula parseConnective(Formula p) {

@@ -1,3 +1,4 @@
+package lad;
 
 /** Binary connective. */
 public enum Conn {

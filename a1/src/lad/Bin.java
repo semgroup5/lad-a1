@@ -1,3 +1,4 @@
+package lad;
 
 /** Binary connection of two sub formulas. */
 public class Bin extends Formula {

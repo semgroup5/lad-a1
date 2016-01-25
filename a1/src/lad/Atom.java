@@ -1,3 +1,5 @@
+package lad;
+
 /** Atomic formula. */
 public class Atom extends Formula {
   
