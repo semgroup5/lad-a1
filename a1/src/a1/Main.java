@@ -1,4 +1,6 @@
 package a1;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.io.Console;
 import java.lang.*;
 import java.util.*;
@@ -31,7 +33,8 @@ public class Main {
               int count = fp.numberOfAtoms();
 
               boolean[] b = new boolean[count];
-              for(boolean[] line : benum(b, count))
+              List<boolean[]> bl = benum(b, count);
+              for(boolean[] line : bl)
               {
                      for(int i = 0; i < count; i++)
                      {
