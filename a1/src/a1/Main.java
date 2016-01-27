@@ -27,32 +27,31 @@ public class Main {
               println("Psst... Hey kid, wanna enter a logical formula? : ");
               String formula = readLine();
               FormulaParser fp = new FormulaParser(formula);
+              Formula f = fp.parse();
+              int count = fp.numberOfAtoms();
 
-              boolean[] b = new boolean[10];
-              for(boolean[] line : benum(b, 9))
+              boolean[] b = new boolean[count];
+              for(boolean[] line : benum(b, count))
               {
-                     for(int i = 0;i<10; i++)
+                     for(int i = 0; i < count; i++)
                      {
                             print(String.valueOf(line[i]?"1 ":"0 "));
                      }
+                     print(f.eval(line)?"True ":"False ");
                      println("");
               }
-
-
-              Formula f = fp.parse();
-              println(fp.parse().toString());
        }
 
        public static List<boolean[]> benum(boolean[] line, int depth) {
               List<boolean[]> bl;
               if (depth == 0) {
-                     bl = new ArrayList<boolean[]>();
+                     bl = new ArrayList<>();
                      bl.add(line.clone());
               } else {
-                     line[depth] = false;
+                     line[depth-1] = false;
                      bl = benum(line, depth - 1);
 
-                     line[depth] = true;
+                     line[depth-1] = true;
                      bl.addAll(benum(line, depth - 1));
               }
               return bl;
